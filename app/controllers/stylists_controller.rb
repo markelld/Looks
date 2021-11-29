@@ -64,6 +64,6 @@ class StylistsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def stylist_params
-      params.require(:stylist).permit(:name, :bio, :instagram, :rate, :user_id)
+      params.require(:stylist).permit(:name, :bio, :instagram, :rate, :user_id, images: [])
     end
 end

@@ -29,11 +29,15 @@
   <div class="my-5">
     <%= form.label :rate %>
     <%= form.number_field :rate, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div> 
+
+  <div class="my-5">
+  <%= form.file_field :images, accept: 'image/png, image/gif, image/jpeg', multiple: true %>
   </div>
 
   <div class="my-5">
     <%= form.label :user_id %>
-    <%= form.text_field :user_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.number_field :user_id, id: :stylists_user_id, value: current_user.id,class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", type: :hidden %>
   </div>
 
   <div class="inline">
