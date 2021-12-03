@@ -1,0 +1,67 @@
+<div id="<%= dom_id order %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">First name:</strong>
+    <%= order.first_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Last name:</strong>
+    <%= order.last_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Email:</strong>
+    <%= order.email %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Height:</strong>
+    <%= order.height %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Waist:</strong>
+    <%= order.waist %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Shoe:</strong>
+    <%= order.shoe %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Chest:</strong>
+    <%= order.chest %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Reason for styling:</strong>
+    <%= order.reason_for_styling %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Number of outfits:</strong>
+    <%= order.number_of_outfits %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Budget per outfit:</strong>
+    <%= order.budget_per_outfit %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= order.user_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Stylist:</strong>
+    <%= order.stylist_id %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this order", order, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this order', edit_order_path(order), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
