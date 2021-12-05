@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_221006) do
+ActiveRecord::Schema.define(version: 2021_12_03_200827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,25 @@ ActiveRecord::Schema.define(version: 2021_11_29_221006) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "height"
+    t.integer "waist"
+    t.integer "shoe"
+    t.integer "chest"
+    t.text "reason_for_styling"
+    t.integer "number_of_outfits"
+    t.integer "budget_per_outfit"
+    t.bigint "user_id", null: false
+    t.bigint "stylist_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["stylist_id"], name: "index_orders_on_stylist_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "stylists", force: :cascade do |t|
     t.string "name"
     t.text "bio"
@@ -68,5 +87,7 @@ ActiveRecord::Schema.define(version: 2021_11_29_221006) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "orders", "stylists"
+  add_foreign_key "orders", "users"
   add_foreign_key "stylists", "users"
 end
