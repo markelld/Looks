@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'messages/index'
   get 'conversations/index'
   resources :orders
   # get 'home/index' 
