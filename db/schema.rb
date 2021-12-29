@@ -80,7 +80,6 @@ ActiveRecord::Schema.define(version: 2021_12_07_051232) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "stylists", force: :cascade do |t|
     t.string "name"
     t.text "bio"
     t.string "instagram"
