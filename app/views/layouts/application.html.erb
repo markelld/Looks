@@ -11,10 +11,14 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body> 
+  <body class="flex flex-col min-h-screen"> 
     <%= render 'home/header' %>
+    <%# <main class="h-auto rounded-lg p-6 bg-gray-700 m-6">
+      <%= yield %>
+    <%# </main>   %> 
     <main class="h-auto rounded-lg p-6 bg-gray-700 m-6">
       <%= yield %>
     </main>
+    <%# <%= render 'home/footer' %> %>
   </body>
 </html>
