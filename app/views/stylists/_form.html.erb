@@ -28,7 +28,7 @@
 
             <div class="my-5">
               <%= form.label :bio %>
-              <%= form.text_area :bio, rows: 6, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+              <%= form.rich_text_area :bio, rows: 6, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
             </div>
 
             <div class="my-5">
@@ -48,7 +48,7 @@
             <div class="my-5">
               <%# <%= form.label :user_id %>
               <%# <%= form.number_field :user_id, id: :stylists_user_id, value: current_user.id, type: :hidden %>
-              <%= form.number_field :user_id, id: :stylists_user_id, value: current_user,class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", type: :hidden %>
+              <%= form.number_field :user_id, id: :stylists_user_id, value: current_user.id,class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", type: :hidden %>
             </div>
 
             <div class="w-full px-3 pb-4">
