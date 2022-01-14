@@ -1,47 +1,65 @@
-<%= form_with(model: stylist, class: "contents") do |form| %>
-  <% if stylist.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(stylist.errors.count, "error") %> prohibited this stylist from being saved:</h2>
+<div class="flex-grow"> 
+  <section class="bg-gradient-to-b from-gray-100 to-white"> 
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="pt-8 pb-12 md:pt-20 md:pb-20"> 
 
-      <ul>
-        <% stylist.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <div class="max-w-3xl mx-auto text-center pb-12 md:pb-12">
+          <h1> Become at Stylist </h1>
+        </div> 
+
+        <div class="max-w-sm mx-auto"> 
+          <%= form_with(model: stylist, class: "contents") do |form| %>
+            <% if stylist.errors.any? %>
+              <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+                <h2><%= pluralize(stylist.errors.count, "error") %> prohibited this stylist from being saved:</h2>
+
+                <ul>
+                  <% stylist.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="my-5">
+              <%= form.label :name %>
+              <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+            </div>
+
+            <div class="my-5">
+              <%= form.label :bio %>
+              <%= form.text_area :bio, rows: 6, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+            </div>
+
+            <div class="my-5">
+              <%= form.label :instagram %>
+              <%= form.text_field :instagram, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+            </div>
+
+            <div class="my-5">
+              <%= form.label :rate %>
+              <%= form.number_field :rate, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+            </div> 
+
+            <div class="my-5">
+            <%= form.file_field :images, accept: 'image/png, image/gif, image/jpeg', multiple: true, class:"" %>
+            </div>
+
+            <div class="my-5">
+              <%# <%= form.label :user_id %>
+              <%# <%= form.number_field :user_id, id: :stylists_user_id, value: current_user.id, type: :hidden %>
+              <%= form.number_field :user_id, id: :stylists_user_id, value: current_user,class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", type: :hidden %>
+            </div>
+
+            <div class="w-full px-3 pb-4">
+              <%= form.submit class: "btn text-white bg-blue-600 hover:bg-blue-700 w-full px-4 py-2 mt-2 rounded-md" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <% end %>
+  </section>
+</div>
 
-  <div class="my-5">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+        
 
-  <div class="my-5">
-    <%= form.label :bio %>
-    <%= form.text_area :bio, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :instagram %>
-    <%= form.text_field :instagram, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :rate %>
-    <%= form.number_field :rate, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div> 
-
-  <div class="my-5">
-  <%= form.file_field :images, accept: 'image/png, image/gif, image/jpeg', multiple: true %>
-  </div>
-
-  <div class="my-5">
-    <%# <%= form.label :user_id %>
-    <%# <%= form.number_field :user_id, id: :stylists_user_id, value: current_user.id, type: :hidden %>
-    <%= form.number_field :user_id, id: :stylists_user_id, value: current_user,class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", type: :hidden %>
-  </div>
-
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium" %>
-  </div>
-<% end %>
