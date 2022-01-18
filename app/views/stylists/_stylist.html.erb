@@ -1,4 +1,38 @@
-<div id="<%= dom_id stylist %>">
+<div class="flex items-center justify-center min-h-screen bg-white py-48">
+  <div class="flex flex-col">
+    <div class="flex flex-col mt-8"> 
+      <div class="container max-w-7xl px-4"> 
+        <div class="flex flex-wrap"> 
+
+          <%# Stylist Card %>
+          <div id="<%= dom_id stylist %>",class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4"> 
+            <div class="flex flex-col" > 
+
+              <div class="text-center mt-6">
+                <h1 class="text-gray-900 text-xl font-bold mb-1">
+                  <%= stylist.name %>
+                </h1>
+                
+                <h1 class="text-gray-900 text-xl font-bold mb-1">
+                  <%= stylist.instagram %>
+                </h1> 
+              </div> 
+            
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<div/>
+            
+        
+        
+        
+
+
+<div id="<%= dom_id stylist %>"> 
   <p class="my-5">
     <strong class="block font-medium mb-1">Name:</strong>
     <%= stylist.name %>
