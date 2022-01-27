@@ -7,11 +7,12 @@
           <%# Stylist Card %>
           <div id="<%= dom_id stylist %>",class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4"> 
             <div class="flex flex-col" >  
-              <div>
-                <%# <%= image_tag @stylist.image %>  
-              <div/>
+               <%# <%= image_tag url_for(stylist.images), size: "150x150" %> 
 
-              <div class="text-center mt-6">
+              <div class="text-center mt-6"> 
+                <div>
+                  <%# <%= image_tag stylist.images.variant(resize_to_limit: [100, 100]) %>
+                </div>
                 <h1 class="text-gray-900 text-xl font-bold mb-1 uppercase">
                   <%= stylist.name %>
                 </h1>

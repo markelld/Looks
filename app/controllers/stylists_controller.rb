@@ -25,12 +25,12 @@ class StylistsController < ApplicationController
 
     respond_to do |format|
       if @stylist.save
-        format.html { redirect_to @stylist, notice: "Stylist was successfully created." }
+        format.html { redirect_to root_path, notice: "Stylist was successfully created." }
         format.json { render :show, status: :created, location: @stylist }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @stylist.errors, status: :unprocessable_entity }
-      end
+      end 
     end
   end
 
