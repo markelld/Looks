@@ -4,7 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.0.0" 
 
 ###devise 
-gem 'devise', git: 'https://github.com/heartcombo/devise', branch: 'main'
+gem 'devise', git: 'https://github.com/heartcombo/devise', branch: 'main' 
+
+gem "ruby-vips"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.0.alpha2"
@@ -43,13 +45,14 @@ gem "bootsnap", ">= 1.4.4", require: false
 # gem "bcrypt", "~> 3.1.7"
 
 # Use Sass to process CSS
-# gem "sassc-rails", "~> 2.1" 
+# gem "sassc-rails", "~> 2.1"  
+
 
 gem "aws-sdk-s3", require: false
 
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.9", ">= 1.9.2"
 
 group :development, :test do
   # Start debugger with binding.b [https://github.com/ruby/debug]

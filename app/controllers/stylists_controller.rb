@@ -3,7 +3,8 @@ class StylistsController < ApplicationController
 
   # GET /stylists or /stylists.json
   def index
-    @stylists = Stylist.all
+    @stylists = Stylist.all 
+    # @stylists = Stylist.all.with_attached_images
   end
 
   # GET /stylists/1 or /stylists/1.json
