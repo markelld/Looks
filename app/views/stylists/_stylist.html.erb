@@ -9,12 +9,12 @@
             <div class="flex flex-col" >  
               <div>  
 
-               <% stylist.images.each do |image|
-                # <%# <% if image.blob.representable? %>
-                #   <%# <%= image.blob.methods %>
-                  <%= image_tag image.blob.representation(resize_to_limit: [400, 400])%>
+               <% stylist.images.each do |image| %>
+                <%# <% if image.blob.representable? %>
+                  <%# # <%= image.blob.methods %> 
+                   <%= image_tag image.blob.representation(resize_to_limit: [400, 400])%>
                 <%# <% end %>
-               <% end %>
+                <% end %>
 
               </div>
               <div class="text-center mt-6"> 
